@@ -1,4 +1,4 @@
-std = "neovim+selene_mini"
+std = "neovim"
 
 [rules]
 global_usage     = "allow"
