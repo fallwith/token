@@ -2,6 +2,12 @@
 
 A Neovim colorscheme with dark and light variants. Requires Neovim 0.12+.
 
+## Showcase
+
+| Dark | Light |
+| --- | --- |
+| ![Dark variant](https://rhau.se/token-dark.jpg) | ![Light variant](https://rhau.se/token-light.jpg) |
+
 ## Install
 
 ```lua
@@ -18,7 +24,8 @@ vim.pack.add('https://github.com/ThorstenRhau/token')
 vim.cmd.colorscheme('token')
 ```
 
-Respects `vim.o.background`. Set `dark` or `light` before loading the colorscheme, or change it at runtime to switch variants.
+Respects `vim.o.background`. Set `dark` or `light` before loading the
+colorscheme, or change it at runtime to switch variants.
 
 ## Structure
 
@@ -36,29 +43,35 @@ token/
 │           ├── treesitter.lua
 │           ├── lsp.lua
 │           └── plugins.lua
+├── scripts/
+│   └── gen_contrib.lua
 ├── README.md
 └── LICENSE
 ```
 
 ## Supported plugins
 
-blink.cmp, claudecode.nvim, diffview.nvim, fzf-lua, gitsigns.nvim, indent-blankline.nvim, markview.nvim, mason.nvim, mini.clue, mini.icons, mini.statusline, neogit, nvim-tree.lua, oil.nvim, treesitter-context, trouble.nvim, vim-matchup.
+blink.cmp, claudecode.nvim, diffview.nvim, fzf-lua, gitsigns.nvim,
+hlchunk.nvim, indent-blankline.nvim, markview.nvim, mason.nvim, mini.clue,
+mini.icons, mini.statusline, neogit, nvim-tree.lua, oil.nvim,
+treesitter-context, trouble.nvim, vim-matchup.
 
 ## Contrib themes
 
-Pre-generated theme files for terminal tools. Auto-generated from the palette; rebuild after palette changes with `make contrib`.
+Pre-generated theme files for terminal tools. Auto-generated from the palette;
+rebuild after palette changes with `make contrib`.
 
-| Tool | Files | Usage |
-|---|---|---|
-| [bat](https://github.com/sharkdp/bat) | `contrib/bat/token-{dark,light}.tmTheme` | Copy to bat themes dir, run `bat cache --build` |
-| [delta](https://github.com/dandavison/delta) | `contrib/delta/token.gitconfig` | Add `[include] path = /path/to/token.gitconfig`, then set `[delta] features = token-dark` or `token-light` |
-| [fish](https://fishshell.com/) | `contrib/fish/token.theme` | Copy to `~/.config/fish/themes/`, then run `fish_config theme choose token` |
-| [fzf](https://github.com/junegunn/fzf) | `contrib/fzf/token-{dark,light}.fish` | `source /path/to/token-dark.fish` in `config.fish` to append theme colors to `FZF_DEFAULT_OPTS` |
-| [ghostty](https://ghostty.org/) | `contrib/ghostty/token-{dark,light}` | Copy to `~/.config/ghostty/themes/`, then set `theme = dark:token-dark,light:token-light` |
-| [lazygit](https://github.com/jesseduffield/lazygit) | `contrib/lazygit/token-{dark,light}.yml` | Merge into `~/.config/lazygit/config.yml` |
-| [ripgrep](https://github.com/BurntSushi/ripgrep) | `contrib/ripgrep/token-{dark,light}.ripgreprc` | `RIPGREP_CONFIG_PATH=/path/to/token-dark.ripgreprc` |
-| [starship](https://starship.rs/) | `contrib/starship/token-{dark,light}.toml` | Append to `starship.toml`, set `palette = "token"` |
-| [tmux](https://github.com/tmux/tmux) | `contrib/tmux/token-{dark,light}.conf` | `source-file /path/to/token-dark.conf` in tmux.conf |
+| Tool                                                | Files                                          | Usage                                                                                                      |
+| --------------------------------------------------- | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| [bat](https://github.com/sharkdp/bat)               | `contrib/bat/token-{dark,light}.tmTheme`       | Copy to bat themes dir, run `bat cache --build`                                                            |
+| [delta](https://github.com/dandavison/delta)        | `contrib/delta/token.gitconfig`                | Add `[include] path = /path/to/token.gitconfig`, then set `[delta] features = token-dark` or `token-light` |
+| [fish](https://fishshell.com/)                      | `contrib/fish/token.theme`                     | Copy to `~/.config/fish/themes/`, then run `fish_config theme choose token`                                |
+| [fzf](https://github.com/junegunn/fzf)              | `contrib/fzf/token-{dark,light}.fish`          | `source /path/to/token-dark.fish` in `config.fish` to append theme colors to `FZF_DEFAULT_OPTS`            |
+| [ghostty](https://ghostty.org/)                     | `contrib/ghostty/token-{dark,light}`           | Copy to `~/.config/ghostty/themes/`, then set `theme = dark:token-dark,light:token-light`                  |
+| [lazygit](https://github.com/jesseduffield/lazygit) | `contrib/lazygit/token-{dark,light}.yml`       | Merge into `~/.config/lazygit/config.yml`                                                                  |
+| [ripgrep](https://github.com/BurntSushi/ripgrep)    | `contrib/ripgrep/token-{dark,light}.ripgreprc` | `RIPGREP_CONFIG_PATH=/path/to/token-dark.ripgreprc`                                                        |
+| [starship](https://starship.rs/)                    | `contrib/starship/token-{dark,light}.toml`     | Append to `starship.toml`, set `palette = "token"`                                                         |
+| [tmux](https://github.com/tmux/tmux)                | `contrib/tmux/token-{dark,light}.conf`         | `source-file /path/to/token-dark.conf` in tmux.conf                                                        |
 
 ## License
 
