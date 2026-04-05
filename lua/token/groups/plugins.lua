@@ -59,6 +59,13 @@ local function plugins(p)
     IblScope = { fg = p.indent_active },
     IblWhitespace = { fg = p.indent },
 
+    -- hlchunk.nvim
+    HLChunk1 = { fg = p.indent_active },
+    HLChunk2 = { fg = p.red },
+    HLIndent1 = { fg = p.indent },
+    HLLineNum1 = { fg = p.indent_active },
+    HLBlank1 = { fg = p.indent },
+
     -- markview.nvim palette (foundation, headings/callouts/checkboxes link here)
     MarkviewPalette0 = { fg = p.fg2, bg = p.bg4 },
     MarkviewPalette0Sign = { fg = p.fg2 },
