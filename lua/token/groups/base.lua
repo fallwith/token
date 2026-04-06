@@ -16,7 +16,6 @@ local function base(p)
     CursorLine = { bg = p.bg5 },
     CursorColumn = { bg = p.bg5 },
     TermCursor = { link = 'Cursor' },
-    TermCursorNC = { fg = p.fg2, bg = p.bg4 },
     CursorLineFold = { fg = p.fg3, bg = p.bg5 },
     CursorLineSign = { fg = p.fg3, bg = p.bg5 },
     CursorLineNr = { fg = p.accent2, bold = true },
