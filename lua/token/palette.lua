@@ -43,6 +43,8 @@ local function palette(background)
       gsign_untracked = '#6e6e95',
       indent = '#e0ddd8',
       indent_active = '#a8a49c',
+      gutter = '#f5f4f0',
+      line_nr = '#b5b2ab',
     }
   end
 
@@ -84,6 +86,8 @@ local function palette(background)
     gsign_untracked = '#878681',
     indent = '#333330',
     indent_active = '#636360',
+    gutter = '#2a2a28',
+    line_nr = '#585855',
   }
 end
 
