@@ -7,22 +7,45 @@ Standalone Neovim colorscheme plugin with dark and light variants. Requires **Ne
 ```txt
 token/
 ├── colors/
-│   └── token.lua              # Entry point (calls require('token').load())
+│   └── token.lua              # Entry point
 ├── lua/
 │   ├── lualine/themes/
-│   │   └── token.lua          # Lualine theme (auto-discovered via runtimepath)
+│   │   └── token.lua          # Lualine theme
 │   └── token/
 │       ├── init.lua            # Public API: load()
-│       ├── palette.lua         # Returns color table for 'dark' or 'light' background
-│       ├── terminal.lua        # Sets g:terminal_color_0..15
-│       └── groups/             # Highlight group definitions (each returns fn(palette))
-│           ├── base.lua        # Core editor, diff, diagnostics, LSP refs, legacy syntax
+│       ├── palette.lua         # Color definitions for dark/light
+│       ├── terminal.lua        # ANSI terminal colors 0..15
+│       └── groups/
+│           ├── init.lua        # Group loader (merges all modules)
+│           ├── editor.lua      # Core editor UI, LSP refs, spell, misc
+│           ├── syntax.lua      # Legacy :h group-name syntax groups
 │           ├── treesitter.lua  # Treesitter capture groups
-│           ├── lsp.lua         # LSP semantic tokens (@lsp.type.*, @lsp.mod.*)
-│           └── plugins.lua     # Plugin-specific highlights (~20 plugins)
+│           ├── lsp.lua         # LSP semantic tokens
+│           ├── diagnostics.lua # Diagnostic signs, virtual text, underlines
+│           ├── diff.lua        # Diff and Added/Changed/Removed
+│           └── plugins/
+│               ├── init.lua    # Plugin loader (merges all plugin modules)
+│               ├── blink.lua
+│               ├── claudecode.lua
+│               ├── diffview.lua
+│               ├── fugitive.lua
+│               ├── fzf.lua
+│               ├── gitsigns.lua
+│               ├── hlchunk.lua
+│               ├── ibl.lua
+│               ├── markview.lua
+│               ├── mason.lua
+│               ├── matchup.lua
+│               ├── mini.lua
+│               ├── neogit.lua
+│               ├── nvimtree.lua
+│               ├── oil.lua
+│               ├── snacks.lua
+│               ├── treesitter_context.lua
+│               └── trouble.lua
 ├── scripts/
-│   └── gen_contrib.lua        # Generates contrib/ theme files (plain LuaJIT)
-├── contrib/                   # Auto-generated theme files for external tools
+│   └── gen_contrib.lua
+├── contrib/
 ├── README.md
 └── LICENSE
 ```
@@ -31,16 +54,17 @@ token/
 
 - `colors/token.lua` is the Neovim entry point, discovered by `:colorscheme token`
 - `init.lua` orchestrates: hi clear, set colors_name, bust module cache (including `lualine.themes.token`), load palette, merge groups, apply via `nvim_set_hl`, set terminal colors
-- `palette.lua` returns a function that takes `'dark'|'light'` and returns a flat table of 28 semantic hex color keys
-- Each file in `groups/` exports a function `(palette) -> { [group] = hl_opts }`
+- `palette.lua` returns a function that takes `'dark'|'light'` and returns a flat table of 40 semantic hex color keys
+- `groups/init.lua` loads and merges: editor, syntax, treesitter, lsp, diagnostics, diff, plugins
+- `groups/plugins/init.lua` loads individual plugin files from an explicit sorted list
+- Each group module exports a function `(palette) -> { [group] = hl_opts }`
 - `terminal.lua` exports `{ colors, set }`: `colors(palette, is_dark)` returns the 0..15 ANSI color table (pure Lua), `set()` applies it via `vim.g`
-- Groups merge order matters: base, treesitter, lsp, plugins (later overrides earlier via `tbl_extend('force', ...)`)
 
 ## Common tasks
 
 - **Add a highlight group**: add it to the appropriate `groups/*.lua` file
 - **Add a palette color**: add it to both dark and light tables in `palette.lua`
-- **Add plugin support**: add groups to `groups/plugins.lua` under a new comment section
+- **Add plugin support**: create `groups/plugins/<name>.lua`, add the module path to the list in `groups/plugins/init.lua`
 - **Regenerate contrib themes**: `make contrib` (after changing `palette.lua`)
 - Prefer `{ link = 'GroupName' }` over duplicating color values
 
