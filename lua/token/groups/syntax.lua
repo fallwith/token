@@ -4,11 +4,11 @@ local function syntax(p)
   return {
     Comment = { fg = p.fg2, italic = true },
     Constant = { fg = p.purple },
-    String = { fg = p.green },
-    Character = { fg = p.green },
-    Number = { fg = p.orange },
+    String = { fg = p.orange },
+    Character = { fg = p.orange },
+    Number = { fg = p.olive },
     Boolean = { fg = p.accent2 },
-    Float = { fg = p.orange },
+    Float = { fg = p.olive },
 
     Identifier = { fg = p.fg0 },
     Function = { fg = p.accent },

@@ -22,6 +22,7 @@
 ---@field purple string
 ---@field cyan string
 ---@field orange string   Numeric literals
+---@field olive string    Warm yellow-green (numbers)
 --- Bright variants (terminal colors 10-14 only)
 ---@field bright_green string
 ---@field bright_blue string
@@ -81,6 +82,7 @@ local function palette(background)
       purple = '#724c9d',
       cyan = '#287171',
       orange = '#9a5f22',
+      olive = '#63742f',
       -- Bright variants
       bright_green = '#41793c',
       bright_blue = '#5081a9',
@@ -135,6 +137,7 @@ local function palette(background)
     purple = '#a68ebc',
     cyan = '#6da6a6',
     orange = '#b99165',
+    olive = '#9ba776',
     -- Bright variants
     bright_green = '#96b394',
     bright_blue = '#96b0c6',

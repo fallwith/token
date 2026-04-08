@@ -6,7 +6,7 @@
 fish_color_normal e8e4dc
 fish_color_command 819eb7
 fish_color_keyword b59579
-fish_color_quote 7ea37c
+fish_color_quote b99165
 fish_color_redirection a68ebc
 fish_color_end 938e87
 fish_color_error ba8388
@@ -39,7 +39,7 @@ fish_pager_color_selected_description 938e87
 fish_color_normal 2a2920
 fish_color_command 3e6b95
 fish_color_keyword 8b602e
-fish_color_quote 356831
+fish_color_quote 9a5f22
 fish_color_redirection 724c9d
 fish_color_end 6c675f
 fish_color_error ab4750
@@ -72,7 +72,7 @@ fish_pager_color_selected_description 6c675f
 fish_color_normal e8e4dc
 fish_color_command 819eb7
 fish_color_keyword b59579
-fish_color_quote 7ea37c
+fish_color_quote b99165
 fish_color_redirection a68ebc
 fish_color_end 938e87
 fish_color_error ba8388
