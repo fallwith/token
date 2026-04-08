@@ -27,7 +27,7 @@ local function blink(p)
     BlinkCmpKindValue = { fg = p.purple },
     BlinkCmpKindEnum = { fg = p.blue },
     BlinkCmpKindKeyword = { fg = p.accent2 },
-    BlinkCmpKindSnippet = { fg = p.orange },
+    BlinkCmpKindSnippet = { fg = p.green },
     BlinkCmpKindColor = { fg = p.purple },
     BlinkCmpKindFile = { fg = p.blue },
     BlinkCmpKindReference = { fg = p.blue },

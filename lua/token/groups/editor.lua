@@ -73,8 +73,8 @@ local function editor(p)
 
     Directory = { fg = p.blue },
     Title = { fg = p.accent, bold = true },
-    Question = { fg = p.orange },
-    MoreMsg = { fg = p.orange },
+    Question = { fg = p.green },
+    MoreMsg = { fg = p.green },
     ModeMsg = { fg = p.fg1, bold = true },
     WarningMsg = { fg = p.yellow },
     ErrorMsg = { fg = p.red },
@@ -107,7 +107,7 @@ local function editor(p)
 
     -- Misc UI
     ComplMatchIns = { fg = p.accent, bold = true },
-    PreInsert = { fg = p.orange },
+    PreInsert = { fg = p.green },
     ComplHint = { fg = p.fg3 },
     ComplHintMore = { fg = p.fg2 },
     FloatShadow = { bg = p.bg0, blend = 50 },

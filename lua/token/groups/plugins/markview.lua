@@ -28,9 +28,9 @@ local function markview(p)
     MarkviewPalette4Fg = { fg = p.blue },
     MarkviewPalette4Bg = { bg = p.bg4 },
 
-    MarkviewPalette5 = { fg = p.orange, bg = p.bg4 },
-    MarkviewPalette5Sign = { fg = p.orange },
-    MarkviewPalette5Fg = { fg = p.orange },
+    MarkviewPalette5 = { fg = p.green, bg = p.bg4 },
+    MarkviewPalette5Sign = { fg = p.green },
+    MarkviewPalette5Fg = { fg = p.green },
     MarkviewPalette5Bg = { bg = p.bg4 },
 
     MarkviewPalette6 = { fg = p.purple, bg = p.bg4 },
@@ -47,7 +47,7 @@ local function markview(p)
     MarkviewCode = { bg = p.bg2 },
     MarkviewCodeInfo = { fg = p.fg2, bg = p.bg2 },
     MarkviewCodeFg = { fg = p.fg3 },
-    MarkviewInlineCode = { fg = p.orange, bg = p.bg2 },
+    MarkviewInlineCode = { fg = p.green, bg = p.bg2 },
 
     -- markview.nvim block quotes (override palette links for semantic colors)
     MarkviewBlockQuoteDefault = { fg = p.fg2 },
