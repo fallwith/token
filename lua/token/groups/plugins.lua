@@ -334,6 +334,9 @@ local function plugins(p)
     MiniClueSeparator = { fg = p.fg3 },
     MiniClueTitle = { fg = p.accent, bg = p.bg0, bold = true },
 
+    -- mini.surround
+    MiniSurround = { fg = p.bg3, bg = p.accent },
+
     -- trouble.nvim
     TroubleNormal = { fg = p.fg0, bg = p.bg1 },
     TroubleNormalNC = { fg = p.fg0, bg = p.bg1 },
