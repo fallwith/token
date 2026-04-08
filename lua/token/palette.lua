@@ -144,10 +144,10 @@ local function palette(background)
     bright_purple = '#bea5d4',
     bright_cyan = '#88c0c0',
     -- Diff backgrounds
-    diff_add = '#272b25',
-    diff_del = '#2d2526',
-    diff_add_inline = '#354a2f',
-    diff_del_inline = '#4a2c2e',
+    diff_add = '#1e3524',
+    diff_del = '#3c2024',
+    diff_add_inline = '#2e5232',
+    diff_del_inline = '#5a2529',
     diff_change = '#2b2b29',
     diff_text = '#444039',
     -- Diagnostic backgrounds
