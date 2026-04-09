@@ -10,9 +10,9 @@
 (deftheme token-light "Token light color theme.")
 
 (let ((class '((class color) (min-colors 89)))
-      (bg0             "#edece8")
-      (bg1             "#f1f0ec")
-      (bg2             "#f5f4f1")
+      (bg0             "#fffefb")
+      (bg1             "#fdfcf8")
+      (bg2             "#fbfaf6")
       (bg3             "#faf9f5")
       (bg4             "#f0efeb")
       (bg5             "#eae9e5")
