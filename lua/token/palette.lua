@@ -1,5 +1,7 @@
 ---@class TokenPalette
---- Background ramp (dark: darkest->lightest, light: lightest->darkest)
+--- Background ramp
+--- Dark:  bg0 (darkest) -> bg5 (lightest), bg3 = Normal
+--- Light: bg3 (lightest) -> bg0 (darkest), bg4/bg5 also darker than bg3
 ---@field bg0 string
 ---@field bg1 string
 ---@field bg2 string
@@ -60,9 +62,9 @@ local function palette(background)
   if background == 'light' then
     return {
       -- Background ramp
-      bg0 = '#fffefb',
-      bg1 = '#fdfcf8',
-      bg2 = '#fbfaf6',
+      bg0 = '#e6e5e1',
+      bg1 = '#ecebe7',
+      bg2 = '#f6f5f1',
       bg3 = '#faf9f5',
       bg4 = '#f0efeb',
       bg5 = '#eae9e5',
