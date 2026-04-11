@@ -45,75 +45,19 @@ vim.cmd.colorscheme('token')
 Respects `vim.o.background`. Set `dark` or `light` before loading the
 colorscheme, or change it at runtime to switch variants.
 
-## Structure
-
-```
-token/
-├── colors/
-│   └── token.lua
-├── lua/
-│   ├── lualine/themes/
-│   │   └── token.lua
-│   └── token/
-│       ├── init.lua
-│       ├── palette.lua
-│       ├── terminal.lua
-│       └── groups/
-│           ├── init.lua
-│           ├── editor.lua
-│           ├── syntax.lua
-│           ├── treesitter.lua
-│           ├── lsp.lua
-│           ├── diagnostics.lua
-│           ├── diff.lua
-│           └── plugins/
-│               ├── init.lua
-│               ├── blink.lua
-│               ├── claudecode.lua
-│               ├── diffview.lua
-│               ├── fugitive.lua
-│               ├── fzf.lua
-│               ├── gitsigns.lua
-│               ├── hlchunk.lua
-│               ├── ibl.lua
-│               ├── markview.lua
-│               ├── mason.lua
-│               ├── matchup.lua
-│               ├── mini.lua
-│               ├── neogit.lua
-│               ├── nvimtree.lua
-│               ├── oil.lua
-│               ├── snacks.lua
-│               ├── treesitter_context.lua
-│               └── trouble.lua
-├── contrib/
-│   ├── bat/
-│   ├── delta/
-│   ├── emacs/
-│   ├── fish/
-│   ├── fzf/
-│   ├── ghostty/
-│   ├── lazygit/
-│   ├── ripgrep/
-│   ├── starship/
-│   └── tmux/
-├── scripts/
-│   └── gen_contrib.lua
-├── Makefile
-├── README.md
-└── LICENSE
-```
 
 ## Supported plugins
 
 - blink.cmp
 - claudecode.nvim
 - diffview.nvim
+- flash.nvim
 - fugitive.vim
 - fzf-lua
 - gitsigns.nvim
 - hlchunk.nvim
 - indent-blankline.nvim
+- lazy.nvim
 - lualine.nvim
 - markview.nvim
 - mason.nvim
@@ -121,13 +65,21 @@ token/
 - mini.icons
 - mini.statusline
 - mini.surround
+- neo-tree.nvim
 - neogit
+- noice.nvim
+- nvim-cmp
+- nvim-dap-ui
 - nvim-tree.lua
 - oil.nvim
+- render-markdown.nvim
 - snacks.nvim
+- telescope.nvim
+- todo-comments.nvim
 - treesitter-context
 - trouble.nvim
 - vim-matchup
+- which-key.nvim
 
 ## Contrib themes
 
