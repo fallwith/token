@@ -18,7 +18,7 @@ local function editor(p)
     TermCursor = { link = 'Cursor' },
     CursorLineFold = { fg = p.fg3, bg = p.bg4 },
     CursorLineSign = { fg = p.fg3, bg = p.bg4 },
-    CursorLineNr = { fg = p.accent2, bold = true },
+    CursorLineNr = { fg = p.olive, bold = true },
 
     LineNr = { fg = p.line_nr, bg = p.bg2 },
     LineNrAbove = { link = 'LineNr' },
