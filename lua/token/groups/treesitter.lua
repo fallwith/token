@@ -11,7 +11,7 @@ local function treesitter(p)
 
     -- Constants
     ['@constant'] = { link = 'Constant' },
-    ['@constant.builtin'] = { fg = p.purple },
+    ['@constant.builtin'] = { link = 'Boolean' },
     ['@constant.macro'] = { link = 'Macro' },
 
     -- Modules / namespaces

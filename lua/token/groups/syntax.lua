@@ -6,9 +6,9 @@ local function syntax(p)
     Constant = { fg = p.purple },
     String = { fg = p.green },
     Character = { fg = p.green },
-    Number = { fg = p.purple },
-    Boolean = { fg = p.accent2 },
-    Float = { fg = p.purple },
+    Number = { fg = p.orange },
+    Boolean = { fg = p.orange },
+    Float = { fg = p.orange },
 
     Identifier = { fg = p.fg0 },
     Function = { fg = p.accent },
