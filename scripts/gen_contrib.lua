@@ -198,11 +198,11 @@ local function gen_delta(dark, light, _dark_term, _light_term)
       '\tline-numbers-zero-style = "' .. p.fg2 .. '"',
       '\tminus-style = syntax "' .. p.diff_del .. '"',
       '\tminus-non-emph-style = syntax "' .. p.diff_del .. '"',
-      '\tminus-emph-style = bold syntax "' .. p.diff_del_inline .. '"',
+      '\tminus-emph-style = bold "' .. p.fg0 .. '" "' .. p.diff_del_inline .. '"',
       '\tminus-empty-line-marker-style = syntax "' .. p.diff_del .. '"',
       '\tplus-style = syntax "' .. p.diff_add .. '"',
       '\tplus-non-emph-style = syntax "' .. p.diff_add .. '"',
-      '\tplus-emph-style = bold syntax "' .. p.diff_add_inline .. '"',
+      '\tplus-emph-style = bold "' .. p.fg0 .. '" "' .. p.diff_add_inline .. '"',
       '\tplus-empty-line-marker-style = syntax "' .. p.diff_add .. '"',
     }
     return table.concat(lines, '\n')
