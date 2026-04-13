@@ -12,6 +12,7 @@ local terminal = require('token.terminal')
 local lib = require('gen_lib')
 local strip = lib.strip
 local rgb_fmt = lib.rgb_fmt
+local sgr_rgb = lib.sgr_rgb
 local write_if_changed = lib.write_if_changed
 local extend_lines = lib.extend_lines
 
@@ -556,8 +557,57 @@ local function gen_zsh(p, variant, _term)
     F .. "[incorrect-subtle]='fg=#" .. s(p.red) .. "'",
     F .. "[subtle-separator]='fg=#" .. s(p.green) .. "'",
     '',
+    '# LS_COLORS (GNU ls, tree, zsh completion)',
+    "export LS_COLORS='"
+      .. 'di=1;'
+      .. sgr_rgb(p.blue)
+      .. ':'
+      .. 'ln='
+      .. sgr_rgb(p.purple)
+      .. ':'
+      .. 'or='
+      .. sgr_rgb(p.red)
+      .. ':'
+      .. 'mi=9;'
+      .. sgr_rgb(p.red)
+      .. ':'
+      .. 'so='
+      .. sgr_rgb(p.green)
+      .. ':'
+      .. 'pi='
+      .. sgr_rgb(p.yellow)
+      .. ':'
+      .. 'ex='
+      .. sgr_rgb(p.accent)
+      .. ':'
+      .. 'bd='
+      .. sgr_rgb(p.cyan)
+      .. ':'
+      .. 'cd='
+      .. sgr_rgb(p.cyan)
+      .. ':'
+      .. 'su=1;'
+      .. sgr_rgb(p.red)
+      .. ':'
+      .. 'sg=1;'
+      .. sgr_rgb(p.yellow)
+      .. ':'
+      .. 'tw=1;'
+      .. sgr_rgb(p.green)
+      .. ':'
+      .. 'ow=4;'
+      .. sgr_rgb(p.blue)
+      .. ':'
+      .. 'st=1;'
+      .. sgr_rgb(p.blue)
+      .. "'",
+    '',
+    '# LSCOLORS (BSD ls)',
+    'export CLICOLOR=1',
+    "export LSCOLORS='ExfxcxdxBxgxgxBxDxCxex'",
+    '',
     '# Completion',
-    "zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'pi=33' 'ex=31' 'bd=34;46' 'cd=34;43'",
+    'zstyle \':completion:*\' list-colors "${(s.:.)LS_COLORS}"',
     "zstyle ':completion:*:descriptions' format '%F{#" .. s(p.fg2) .. "}-- %d --%f'",
     "zstyle ':completion:*:messages' format '%F{#" .. s(p.fg2) .. "}-- %d --%f'",
     "zstyle ':completion:*:warnings' format '%F{#" .. s(p.red) .. "}-- no matches --%f'",

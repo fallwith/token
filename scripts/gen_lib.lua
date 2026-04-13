@@ -16,6 +16,11 @@ function M.rgb_fmt(hex)
   return string.format('0x%02x,0x%02x,0x%02x', r, g, b)
 end
 
+function M.sgr_rgb(hex)
+  local r, g, b = hex_to_rgb(hex)
+  return string.format('38;2;%d;%d;%d', r, g, b)
+end
+
 function M.read_file(path)
   local f = io.open(path, 'r')
   if not f then
