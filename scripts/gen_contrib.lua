@@ -13,6 +13,7 @@ local lib = require('gen_lib')
 local strip = lib.strip
 local rgb_fmt = lib.rgb_fmt
 local sgr_rgb = lib.sgr_rgb
+local sgr_bg_rgb = lib.sgr_bg_rgb
 local write_if_changed = lib.write_if_changed
 local extend_lines = lib.extend_lines
 
@@ -557,6 +558,9 @@ local function gen_zsh(p, variant, _term)
     F .. "[incorrect-subtle]='fg=#" .. s(p.red) .. "'",
     F .. "[subtle-separator]='fg=#" .. s(p.green) .. "'",
     '',
+    '# zsh-autosuggestions',
+    "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#" .. s(p.line_nr) .. "'",
+    '',
     '# LS_COLORS (GNU ls, tree, zsh completion)',
     "export LS_COLORS='"
       .. 'di=1;'
@@ -607,7 +611,9 @@ local function gen_zsh(p, variant, _term)
     "export LSCOLORS='ExfxcxdxBxgxgxBxDxCxex'",
     '',
     '# Completion',
-    'zstyle \':completion:*\' list-colors "${(s.:.)LS_COLORS}"',
+    'zstyle \':completion:*\' list-colors "${(s.:.)LS_COLORS}" ' .. '"ma=' .. sgr_bg_rgb(p.sel) .. ';' .. sgr_rgb(
+      p.fg0
+    ) .. '"',
     "zstyle ':completion:*:descriptions' format '%F{#" .. s(p.fg2) .. "}-- %d --%f'",
     "zstyle ':completion:*:messages' format '%F{#" .. s(p.fg2) .. "}-- %d --%f'",
     "zstyle ':completion:*:warnings' format '%F{#" .. s(p.red) .. "}-- no matches --%f'",
