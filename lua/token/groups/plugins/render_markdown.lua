@@ -23,7 +23,13 @@ local function render_markdown(p)
     RenderMarkdownCodeInfo = { fg = p.fg2, bg = p.bg2 },
 
     -- block quotes
-    RenderMarkdownQuote = { fg = p.fg2, italic = true },
+    RenderMarkdownQuote = { link = 'RenderMarkdownQuote1' },
+    RenderMarkdownQuote1 = { fg = p.fg2, italic = true },
+    RenderMarkdownQuote2 = { fg = p.fg2, italic = true },
+    RenderMarkdownQuote3 = { fg = p.fg2, italic = true },
+    RenderMarkdownQuote4 = { fg = p.fg2, italic = true },
+    RenderMarkdownQuote5 = { fg = p.fg2, italic = true },
+    RenderMarkdownQuote6 = { fg = p.fg2, italic = true },
 
     -- links
     RenderMarkdownLink = { fg = p.blue, underline = true },
